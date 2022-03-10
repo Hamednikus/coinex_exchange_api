@@ -1,5 +1,5 @@
-const ACCESS_ID = ""; // your access id
-const SECRET_KEY = ""; // your secret key
+const ACCESS_ID = "9E353DE20CF4452FB1FDC0AF28E52F51 "; // your access id
+const SECRET_KEY = "AA0F43305134FEC5601C1A65BD78DDD090B22C1B49D57DED"; // your secret key
 
 
 function createDictText(params) {
@@ -26,7 +26,7 @@ const axios = Axios.create({
   baseURL: "https://api.coinex.com/v1",
   headers: {
     "User-Agent":
-      "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/39.0.2171.71 Safari/537.36",
+      "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (HTML, like Gecko) Chrome/39.0.2171.71 Safari/537.36",
     post: {
       "Content-Type": "application/json",
     },
