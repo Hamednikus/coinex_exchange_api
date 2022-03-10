@@ -6,7 +6,6 @@ import websockets
 import ssl
 import certifi
 import json
-import logging
 import time
 import hashlib
 
