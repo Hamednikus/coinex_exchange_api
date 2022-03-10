@@ -29,7 +29,7 @@ async def ping(conn):
 
 
 async def auth(conn):
-    current_time = int(time.time()*1000)
+    current_time = int(time.time() * 1000)
     sign_str = f"access_id={access_id}&tonce={current_time}&secret_key={secret_key}"
     md5 = hashlib.md5(sign_str.encode())
     param = {
@@ -37,31 +37,31 @@ async def auth(conn):
         "method": "server.sign",
         "params": [access_id, md5.hexdigest().upper(), current_time]
     }
-    await conn.send(json.dumps(param))   
+    await conn.send(json.dumps(param))
     res = await conn.recv()
-    print(json.loads(res)) 
+    print(json.loads(res))
 
 
 async def subscribe_depth(conn):
     param = {
         "id": 1,
         "method": "depth.subscribe",
-        "params": ['BTCUSDT', 10, "1"]        
+        "params": ['BTCUSDT', 10, "1"]
     }
     await conn.send(json.dumps(param))
     res = await conn.recv()
-    print(json.loads(res)) 
+    print(json.loads(res))
 
 
 async def subscribe_asset(conn):
     param = {
         "id": 1,
         "method": "asset.subscribe",
-        "params": ['USDT', 'CET']        
+        "params": ['USDT', 'CET']
     }
     await conn.send(json.dumps(param))
     res = await conn.recv()
-    print(json.loads(res)) 
+    print(json.loads(res))
 
 
 async def main():
@@ -74,7 +74,7 @@ async def main():
     # subscribe asset
     await subscribe_asset(conn)
 
-    # note: important to keepalive 
+    # note: important to keepalive
     asyncio.create_task(ping(conn))
 
     # loop to process update data
@@ -90,4 +90,3 @@ if __name__ == "__main__":
     asyncio.run(main())
     # loop.set_debug(enabled=True)
     print("websocket demo")
-    
