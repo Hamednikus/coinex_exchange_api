@@ -11,8 +11,8 @@ import time
 import hashlib
 
 WS_URL = "wss://socket.coinex.com/"
-access_id = "XXXXX"
-secret_key = "XXXXX"
+access_id = "9E353DE20CF4452FB1FDC0AF28E52F51 "
+secret_key = "AA0F43305134FEC5601C1A65BD78DDD090B22C1B49D57DED"
 
 ssl_context = ssl.create_default_context()
 ssl_context.load_verify_locations(certifi.where())
